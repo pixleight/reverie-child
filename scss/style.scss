@@ -11,9 +11,32 @@
 // Pagination is not necessary by default, but if you wish to edit it, simply uncomment to enable the Mixin.
 // @import "foundation/components/pagination";
 
+@import "compass/css3/text-shadow";
+
 // Start your child theme customization below.
 body {
 	background-color: $body-bg;
+	
+	&:after {
+		content: "";
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		z-index: -1;
+
+		opacity: 0.85;
+		background-image: url(../images/ksc-aerial2.jpg);
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+#content {
+	background-color: rgba(#FFF, 0.75);
+	@include text-shadow(0 1px 0 #FFF);
 }
 
 #tribe-events-pg-template {

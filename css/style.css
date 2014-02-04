@@ -567,7 +567,26 @@ footer.full-width .love-reverie {
   }
 }
 body {
-  background-color: #f9faec;
+  background-color: #ddd5c6;
+}
+body:after {
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.85;
+  background-image: url(../images/ksc-aerial2.jpg);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#content, #tribe-events-pg-template {
+  background-color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 0 white;
 }
 
 #tribe-events-pg-template {
@@ -575,6 +594,6 @@ body {
 }
 
 #sidebar .panel, .footer-widget .panel {
-  background-color: #f3f5d9;
-  border: 1px solid #e6eab1;
+  background-color: #d5cbb9;
+  border: 1px solid #c5b79d;
 }

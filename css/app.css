@@ -37,7 +37,7 @@ body {
 }
 
 body {
-  background: #f9faec;
+  background: #ddd5c6;
   color: #444444;
   padding: 0;
   margin: 0;
@@ -3809,10 +3809,10 @@ ul.pagination li {
 .panel {
   border-style: solid;
   border-width: 1px;
-  border-color: #e6eab1;
+  border-color: #c5b79d;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #f3f5d9;
+  background: #d5cbb9;
 }
 .panel > :first-child {
   margin-top: 0;
