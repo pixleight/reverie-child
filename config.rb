@@ -1,6 +1,6 @@
 # Require any additional compass plugins here.
 # Change the path to the respective Reverie parent theme if you changed the folder name.
-add_import_path "../reverie-master/bower_components/foundation/scss"
+add_import_path "../reverie/bower_components/foundation/scss"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
