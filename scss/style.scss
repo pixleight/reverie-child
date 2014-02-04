@@ -15,3 +15,15 @@
 body {
 	background-color: $body-bg;
 }
+
+#tribe-events-pg-template {
+	@extend #content;
+	padding: 0;
+}
+
+#sidebar, .footer-widget {
+	.panel {
+		background-color: $panel-bg;
+		border: $panel-border-size $panel-border-style $panel-border-color;
+	}
+}

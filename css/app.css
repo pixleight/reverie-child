@@ -3809,10 +3809,10 @@ ul.pagination li {
 .panel {
   border-style: solid;
   border-width: 1px;
-  border-color: #d8d8d8;
+  border-color: #e6eab1;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #f2f2f2;
+  background: #f3f5d9;
 }
 .panel > :first-child {
   margin-top: 0;
