@@ -35,7 +35,7 @@ $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
 // We use these to control various global styles
-$body-bg: #f7f7f7;
+$body-bg: #f9faec;
 $body-font-color: #444;
 $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -50,8 +50,8 @@ $body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
+$primary-color: #21476C;
+$secondary-color: #BD295A;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -1012,7 +1012,7 @@ $panel-margin-bottom: rem-calc(20);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: $primary-color;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
