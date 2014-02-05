@@ -12,19 +12,14 @@
 			</header>
 			<div class="entry-content">
 				<?php the_content(); ?>
-				<?php // Departments
-				$args = array(
-					'post__in' => get_field('staff_department'),
-					'post_type' => 'department',
-					'posts_per_page' => -1,
-					'orderby' => 'title',
-					'order' => 'ASC'
-				);
-				$departments = new WP_Query($args);
-				if( $departments->have_posts() ) :
-					while( $departments->have_posts() ) : $departments->the_post(); ?>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				<?php endwhile; endif; wp_reset_query(); ?>
+				<?php $address = get_field('address');
+ 
+				if( !empty($address) ):
+				?>
+				<div class="acf-map">
+					<div class="marker" data-lat="<?php echo $address['lat']; ?>" data-lng="<?php echo $address['lng']; ?>"></div>
+				</div>
+				<?php endif; ?>
 			</div>
 			<footer>
 				<?php wp_link_pages(array('before' => '<nav id="page-nav"><p>' . __('Pages:', 'reverie'), 'after' => '</p></nav>' )); ?>
