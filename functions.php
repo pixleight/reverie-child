@@ -1,5 +1,6 @@
 <?php
-add_action('pre_get_posts', 'intranet_pre_get_posts');
+
+require_once('lib/enqueue-style.php');
  
 function intranet_pre_get_posts( $query )
 {
@@ -23,4 +24,5 @@ function intranet_pre_get_posts( $query )
 	return $query;
  
 }
+add_action('pre_get_posts', 'intranet_pre_get_posts');
 ?>

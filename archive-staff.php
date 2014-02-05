@@ -4,25 +4,38 @@
 	<div class="small-12 large-8 columns" id="content" role="main">
 	
 	<?php if ( have_posts() ) : ?>
-		<div class="row">
-			<div class="small-3 columns">
-				<?php $last_name_order = ($_GET['sortby'] == 'last_name' && $_GET['order'] == 'ASC') ? 'DESC' : 'ASC'; ?>
-				<a href="?sortby=last_name&amp;order=<?php echo $last_name_order; ?>"><strong>Last Name</strong></a>
-			</div>
-			<div class="small-3 columns">
-				<strong>Email</strong></a>
-			</div>
-			<div class="small-3 columns">
-				<strong>Phone Number</strong>
-			</div>
-			<div class="small-3 columns">
-				<strong>Extension</strong>
-			</div>
-		</div>
+		<table class="small-12">
+			<thead>
+				<tr>
+					<th>
+						<?php $last_name_order = ($_GET['sortby'] == 'last_name' && $_GET['order'] == 'ASC') || !$_GET['sortby'] ? 'DESC' : 'ASC'; ?>
+						<a href="?sortby=last_name&amp;order=<?php echo $last_name_order; ?>">
+							<strong>Last Name</strong>
+							<?php if( ( $_GET['sortby'] == 'last_name' && $_GET['order'] == 'ASC' ) || !$_GET['sortby'] ) : ?>
+								<i class="fa fa-chevron-down right"></i>
+							<?php elseif( $_GET['sortby'] == 'last_name' && $_GET['order'] == 'DESC' ) : ?>
+								<i class="fa fa-chevron-up right"></i>
+							<?php endif; ?>
+						</a>
+					</th>
+					<th>
+						<strong>Email</strong>
+					</th>
+					<th>
+						<strong>Phone Number</strong>
+					</th>
+					<th>
+						<strong>Extension</strong>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', get_post_type() ); ?>
 		<?php endwhile; ?>
+			</tbody>
+		</table>
 		
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>

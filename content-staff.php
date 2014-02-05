@@ -7,10 +7,9 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('index-card'); ?>>
-	<div class="entry-content">
-		<div class="row">
-			<div class="small-3 columns">
+
+		<tr id="post-<?php the_ID(); ?>">
+			<td>
 				<a href="<?php the_permalink(); ?>">
 					<?php 
 					echo get_field('first_name') . ' ' . get_field('last_name');
@@ -18,15 +17,13 @@
 					?>
 				</a>
 			</div>
-			<div class="small-3 columns">
+			<td>
 				<?php the_field('email'); ?>&nbsp;
-			</div>
-			<div class="small-3 columns">
+			</td>
+			<td>
 				<?php the_field('phone_number'); ?>
-			</div>
-			<div class="small-3 columns">
+			</td>
+			<td>
 				<?php the_field('extension'); ?>
-			</div>
-		</div>
-	</div>
-</article>
+			</td>
+		</tr>
