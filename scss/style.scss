@@ -32,6 +32,27 @@ body {
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
+
+	> header.contain-to-grid {
+		margin-bottom: 4rem;
+	}
+}
+
+.top-bar {
+	.name {
+		h1 {
+			a {
+				height: 91px;
+				position: relative;
+				top: 10px;
+				overflow: hidden;
+				white-space: nowrap;
+				width: 290px;
+				text-indent: 150%;
+				background: transparent url(../images/ksc-logo.png) 50% 0 no-repeat;
+			}
+		}
+	}
 }
 
 #content {
