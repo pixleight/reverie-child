@@ -11,7 +11,7 @@
 // Pagination is not necessary by default, but if you wish to edit it, simply uncomment to enable the Mixin.
 // @import "foundation/components/pagination";
 
-@import "compass/css3/text-shadow";
+@import "compass/css3";
 
 // Start your child theme customization below.
 body {
@@ -34,22 +34,36 @@ body {
 	}
 
 	> header.contain-to-grid {
-		margin-bottom: 4rem;
+		position: relative;
+		top: 2rem;
+		margin-bottom: 5rem;
 	}
 }
 
 .top-bar {
 	.name {
 		h1 {
+			position: relative;
+			top: -1.5rem;
+			border: 1px solid #FFF;
+			padding: 10px;
+			@include background-image(linear-gradient(#FFF, #F0F0F0));
+			@include border-radius(3px);
+			@include box-shadow(0 3px 5px rgba(#000,0.25));
 			a {
-				height: 91px;
-				position: relative;
-				top: 10px;
+				height: 82px;
 				overflow: hidden;
 				white-space: nowrap;
 				width: 290px;
+				margin: 0;
+				padding: 0;
 				text-indent: 150%;
-				background: transparent url(../images/ksc-logo.png) 50% 0 no-repeat;
+				background: transparent url(../images/logo.png) 50% 0 no-repeat;
+
+				@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+					background-image: url(../images/logo-2x.png);
+					background-size: contain;
+				}
 			}
 		}
 	}
