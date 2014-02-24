@@ -85,3 +85,8 @@ body {
 		border: $panel-border-size $panel-border-style $panel-border-color;
 	}
 }
+
+#tribe-events-pg-template {
+	max-width: none;
+	padding: 3.125rem;
+}

@@ -638,3 +638,8 @@ body > header.contain-to-grid {
   background-color: #d5cbb9;
   border: 1px solid #c5b79d;
 }
+
+#tribe-events-pg-template {
+  max-width: none;
+  padding: 3.125rem;
+}
