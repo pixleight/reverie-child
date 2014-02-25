@@ -50,6 +50,14 @@ body {
 		}
 	}
 
+	&.admin-bar {
+		> header.contain-to-grid {
+			@media #{$medium-up} {
+				top: 4rem;
+			}
+		}
+	}
+
 	@media #{$medium-up} {
 		padding-top: 8rem;
 	}
