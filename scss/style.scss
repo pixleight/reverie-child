@@ -34,37 +34,62 @@ body {
 	}
 
 	> header.contain-to-grid {
-		position: relative;
-		top: 2rem;
-		margin-bottom: 5rem;
+		@include box-shadow(
+			0 3px 5px rgba(#000,0.25)
+		);
+
+		@media #{$medium-up} {
+			position: fixed;
+			top: 2rem;
+			z-index: 100;
+			margin-bottom: 0;
+			@include box-shadow(
+				0 3px 5px rgba(#000,0.25),
+				0 -2rem 4rem 3rem rgba(#FFF, 0.60)
+			);
+		}
+	}
+
+	@media #{$medium-up} {
+		padding-top: 8rem;
 	}
 }
 
 .top-bar {
 	.name {
 		h1 {
-			position: relative;
-			top: -1.5rem;
-			border: 1px solid #FFF;
-			padding: 10px;
-			@include background-image(linear-gradient(#FFF, #F0F0F0));
-			@include border-radius(3px);
-			@include box-shadow(0 3px 5px rgba(#000,0.25));
-			a {
-				height: 82px;
-				overflow: hidden;
-				white-space: nowrap;
-				width: 290px;
-				margin: 0;
-				padding: 0;
-				text-indent: 150%;
-				background: transparent url(../images/logo.png) 50% 0 no-repeat;
+			@media #{$medium-up} {
+				position: relative;
+				top: -1.5rem;
+				border: 1px solid #FFF;
+				padding: 10px;
+				@include background-image(linear-gradient(#FFF, #F0F0F0));
+				@include border-radius(3px);
+				@include box-shadow(0 3px 5px rgba(#000,0.25));
+			}
 
-				@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-					background-image: url(../images/logo-2x.png);
-					background-size: contain;
+			a {
+				width: 70%;
+				font-family: $header-font-family;
+				font-weight: 700;
+
+				@media #{$medium-up} {
+					height: 82px;
+					overflow: hidden;
+					white-space: nowrap;
+					width: 290px;
+					margin: 0;
+					padding: 0;
+					text-indent: 150%;
+					background: transparent url(../images/logo.png) 50% 0 no-repeat;
+
+					@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+						background-image: url(../images/logo-2x.png);
+						background-size: contain;
+					}
 				}
 			}
+
 		}
 	}
 }
@@ -86,7 +111,26 @@ body {
 	}
 }
 
+/* --------------------
+ *	Tribe Events
+ * -------------------- */
+
 #tribe-events-pg-template {
 	max-width: none;
 	padding: 3.125rem;
+}
+
+.events-list .tribe-events-loop,
+.tribe-events-day .tribe-events-loop,
+.single-tribe_venue .tribe-events-loop,
+.single-tribe_organizer .tribe-events-loop {
+	max-width: none;
+}
+
+.tribe-events-list {
+	h2 {
+		&.tribe-events-list-event-title {
+			display: block;
+		}
+	}
 }

@@ -584,41 +584,66 @@ body:after {
   background-size: contain;
 }
 body > header.contain-to-grid {
-  position: relative;
-  top: 2rem;
-  margin-bottom: 5rem;
-}
-
-.top-bar .name h1 {
-  position: relative;
-  top: -1.5rem;
-  border: 1px solid #FFF;
-  padding: 10px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0));
-  background-image: -webkit-linear-gradient(#ffffff, #f0f0f0);
-  background-image: -moz-linear-gradient(#ffffff, #f0f0f0);
-  background-image: -o-linear-gradient(#ffffff, #f0f0f0);
-  background-image: linear-gradient(#ffffff, #f0f0f0);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
 }
-.top-bar .name h1 a {
-  height: 82px;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 290px;
-  margin: 0;
-  padding: 0;
-  text-indent: 150%;
-  background: transparent url(../images/logo.png) 50% 0 no-repeat;
+@media only screen and (min-width: 40.063em) {
+  body > header.contain-to-grid {
+    position: fixed;
+    top: 2rem;
+    z-index: 100;
+    margin-bottom: 0;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 -2rem 4rem 3rem rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 -2rem 4rem 3rem rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 -2rem 4rem 3rem rgba(255, 255, 255, 0.6);
+  }
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media only screen and (min-width: 40.063em) {
+  body {
+    padding-top: 8rem;
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  .top-bar .name h1 {
+    position: relative;
+    top: -1.5rem;
+    border: 1px solid #FFF;
+    padding: 10px;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0));
+    background-image: -webkit-linear-gradient(#ffffff, #f0f0f0);
+    background-image: -moz-linear-gradient(#ffffff, #f0f0f0);
+    background-image: -o-linear-gradient(#ffffff, #f0f0f0);
+    background-image: linear-gradient(#ffffff, #f0f0f0);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+.top-bar .name h1 a {
+  width: 70%;
+  font-family: "Alegreya Sans", "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+@media only screen and (min-width: 40.063em) {
+  .top-bar .name h1 a {
+    height: 82px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 290px;
+    margin: 0;
+    padding: 0;
+    text-indent: 150%;
+    background: transparent url(../images/logo.png) 50% 0 no-repeat;
+  }
+}
+@media only screen and (min-width: 40.063em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 40.063em) and (min-resolution: 192dpi) {
   .top-bar .name h1 a {
     background-image: url(../images/logo-2x.png);
     background-size: contain;
@@ -639,7 +664,21 @@ body > header.contain-to-grid {
   border: 1px solid #c5b79d;
 }
 
+/* --------------------
+ *	Tribe Events
+ * -------------------- */
 #tribe-events-pg-template {
   max-width: none;
   padding: 3.125rem;
+}
+
+.events-list .tribe-events-loop,
+.tribe-events-day .tribe-events-loop,
+.single-tribe_venue .tribe-events-loop,
+.single-tribe_organizer .tribe-events-loop {
+  max-width: none;
+}
+
+.tribe-events-list h2.tribe-events-list-event-title {
+  display: block;
 }
