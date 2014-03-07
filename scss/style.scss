@@ -33,6 +33,12 @@ body {
 		background-size: contain;
 	}
 
+	&.home {
+		&:after {
+			display: none;
+		}
+	}
+
 	> header.contain-to-grid {
 		@include box-shadow(
 			0 3px 5px rgba(#000,0.25)
@@ -40,7 +46,8 @@ body {
 
 		@media #{$medium-up} {
 			position: fixed;
-			top: 2rem;
+			border-top: 2rem solid rgba(#FFF, 0.9);
+			top: 0;
 			z-index: 100;
 			margin-bottom: 0;
 			@include box-shadow(
@@ -71,6 +78,7 @@ body {
 				top: -1.5rem;
 				border: 1px solid #FFF;
 				padding: 10px;
+				background-color: mix(#FFF, #F0F0F0);
 				@include background-image(linear-gradient(#FFF, #F0F0F0));
 				@include border-radius(3px);
 				@include box-shadow(0 3px 5px rgba(#000,0.25));
@@ -105,11 +113,78 @@ body {
 #content {
 	background-color: rgba(#FFF, 0.75);
 	@include text-shadow(0 1px 0 #FFF);
+
+	&.front-page {
+		padding: 0;
+
+		article {
+			padding: 0;
+			min-height: 35rem;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			@include text-shadow(0 1px 1px rgba(#000, 0.25));
+
+			p {
+				font-weight: 100;
+				font-size: 1.75rem;
+			}
+
+			h2 {
+				color: #FFF;
+			}
+
+			.article-padding {
+				padding: 8rem 3.125rem 3.125rem;
+
+				@media #{$small-only} {
+					padding: 2rem;
+				}
+			}
+
+			.article-content {
+				color: #FFF;
+				width: 75%;
+				background: rgba($primary-color, 0.75);
+				padding: (3.125rem/3) 3.125rem;
+				@include box-shadow(0 1px 0 rgba(#FFF, 0.6));
+
+				@media #{$small-only} {
+					width: 100%;
+				}
+			}
+		}
+	}
 }
 
-#tribe-events-pg-template {
-	@extend #content;
-	padding: 0;
+[data-magellan-expedition] {
+	opacity: 0;
+	position: fixed;
+	z-index: 100;
+	right: 0;
+	left: auto;
+	width: auto;
+	min-width: 0;
+	top: 6rem !important;
+	background: rgba(#FFF, 0.8);
+	@include transition(opacity 0.5s ease-in);
+	@include box-shadow(0 5px 15px rgba(#000, 0.25));
+
+	.sub-nav {
+		dd {
+			display: block;
+			float: none;
+		}
+	}
+
+	&.fixed {
+		opacity: 1;
+	}
+
+	@media #{$small-only} {
+		display: none !important;
+	}
 }
 
 #sidebar, .footer-widget {
@@ -122,6 +197,11 @@ body {
 /* --------------------
  *	Tribe Events
  * -------------------- */
+
+#tribe-events-pg-template {
+	@extend #content;
+	padding: 0;
+}
 
 #tribe-events-pg-template {
 	max-width: none;
