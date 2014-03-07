@@ -15,4 +15,7 @@ if( ! function_exists( 'ksc_enqueue_style' ) ) {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ksc_enqueue_style' );
+
+require_once( 'lib/custom-posts.php' );
+
 ?>
