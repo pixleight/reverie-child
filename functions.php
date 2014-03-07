@@ -11,10 +11,36 @@ if( ! function_exists( 'ksc_enqueue_style' ) ) {
 
 		wp_enqueue_style( 'google-fonts-alegreya' );
 		wp_enqueue_style( 'fontawesome' );
-		
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ksc_enqueue_style' );
+
+// add ie conditional html5 shim and other foundation fixes to header
+function add_ie_8_fixes_head () {
+	echo '
+	<!--[if lt IE 9]>';
+		echo '
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>';
+		echo '
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>';
+		echo '
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>';
+		echo '
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>';
+	echo '
+	<![endif]-->';
+}
+add_action('wp_head', 'add_ie_8_fixes_head');
+
+function add_ie_8_fixes_footer () {
+	echo '
+	<!--[if lt IE 9]>';
+		echo '
+		<script src="'.get_stylesheet_directory_uri().'/js/rem.min.js"></script>';
+	echo '
+	<![endif]-->';
+}
+add_action('wp_footer', 'add_ie_8_fixes_footer');
 
 require_once( 'lib/custom-posts.php' );
 
