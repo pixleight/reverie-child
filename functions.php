@@ -1,4 +1,7 @@
 <?php
+
+$content_width = 658;
+
 /*********************
 Enqueue styles
 *********************/
@@ -32,6 +35,7 @@ function add_ie_8_fixes_head () {
 }
 add_action('wp_head', 'add_ie_8_fixes_head');
 
+// add rem polyfil
 function add_ie_8_fixes_footer () {
 	echo '
 	<!--[if lt IE 9]>';
@@ -41,6 +45,15 @@ function add_ie_8_fixes_footer () {
 	<![endif]-->';
 }
 add_action('wp_footer', 'add_ie_8_fixes_footer');
+
+function alter_cabins_query($qry) {
+   if ( $qry->is_main_query() && ( is_post_type_archive( 'cabin' ) || is_tax( 'cabin_types' ) ) ) {
+     $qry->set( 'order', 'ASC' );
+     $qry->set( 'orderby', 'title' );
+     $qry->set( 'nopaging', true );
+   }
+}
+add_action('pre_get_posts','alter_cabins_query');
 
 require_once( 'lib/custom-posts.php' );
 
