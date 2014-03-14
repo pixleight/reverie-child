@@ -604,6 +604,11 @@ body > header.contain-to-grid {
   }
 }
 @media only screen and (min-width: 40.063em) {
+  body.admin-bar > header.contain-to-grid {
+    top: 2rem;
+  }
+}
+@media only screen and (min-width: 40.063em) {
   body {
     padding-top: 8rem;
   }

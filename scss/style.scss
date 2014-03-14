@@ -60,7 +60,7 @@ body {
 	&.admin-bar {
 		> header.contain-to-grid {
 			@media #{$medium-up} {
-				//top: 4rem;
+				top: 2rem;
 			}
 		}
 	}
