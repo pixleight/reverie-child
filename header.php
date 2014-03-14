@@ -64,28 +64,23 @@
 	            ) ),
 	        ) );
 	    ?>
-	    
-	    <?php // Search box in navbar
-	    // <ul class="right">
-		// 	<li class="has-form">
-		// 		<form role="search" method="get">
-		// 		<div class="row collapse">
-		// 			<div class="small-10 columns">
-		// 				<input type="text" placeholder="Search" name="s">
-		// 			</div>
-		// 			<div class="small-2 columns">
-		// 				<button type="submit" class="secondary button expand"><i class="fa fa-search"></i></buttom>
-		// 			</div>
-		// 		</div>
-		// 		</form>
-		// 	</li>
-		// </ul>
-		?>
 
 		<ul class="right">
 			<li>
 				<a href="http://www.facebook.com/KatahdinShadows" target="_blank" style="font-size: 1.5rem;"><i class="fa fa-facebook-square"></i><span class="show-for-small-only"> Follow us on Facebook</span></a>
 			</li>
+			<li class="has-form show-for-small-only">
+		 		<form role="search" method="get">
+		 		<div class="row collapse">
+		 			<div class="small-10 columns">
+		 				<input type="text" placeholder="Search" name="s">
+		 			</div>
+		 			<div class="small-2 columns">
+		 				<button type="submit" class="secondary button expand"><i class="fa fa-search"></i></buttom>
+		 			</div>
+		 		</div>
+		 		</form>
+		 	</li>
 		</ul>
 
 	    <?php

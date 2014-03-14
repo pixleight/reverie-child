@@ -678,7 +678,12 @@ body > header.contain-to-grid {
 }
 #content.front-page article p, .front-page#tribe-events-pg-template article p {
   font-weight: 100;
-  font-size: 1.75rem;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 40.063em) {
+  #content.front-page article p, .front-page#tribe-events-pg-template article p {
+    font-size: 1.75rem;
+  }
 }
 #content.front-page article h2, .front-page#tribe-events-pg-template article h2 {
   color: #FFF;

@@ -28,7 +28,7 @@
 
 	if( $menu_query->have_posts() ) : ?>
 
-		<div data-magellan-expedition="fixed" data-magellan-top-offset="100">
+		<div data-magellan-expedition="fixed" data-magellan-top-offset="100" class="hide-for-small-only">
 			<dl class="sub-nav">
 
 		<?php while ( $menu_query->have_posts() ) : $menu_query->the_post(); ?>
