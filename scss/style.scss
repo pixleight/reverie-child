@@ -104,6 +104,11 @@ body {
 						background-size: contain;
 					}
 				}
+
+				@media #{$screen} and (min-width: #{upper-bound($small-range)}) and (max-width: 48.4375em) {
+					width: 165px;
+					height: 45px;
+				}
 			}
 
 		}
