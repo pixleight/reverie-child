@@ -676,7 +676,7 @@ body > header.contain-to-grid {
 #content.front-page article, .front-page#tribe-events-pg-template article {
   padding: 0;
   min-height: 35rem;
-  background-position: 50% 0;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
