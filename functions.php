@@ -55,6 +55,14 @@ function alter_cabins_query($qry) {
 }
 add_action('pre_get_posts','alter_cabins_query');
 
+function ksc_styles_and_scripts(){
+	wp_register_script( 'ksc-script', get_stylesheet_directory_uri() . '/js/ksc.js', array(), '1.0', true );
+
+	wp_enqueue_script( 'ksc-script' );
+}
+
+add_action('wp_enqueue_scripts', 'ksc_styles_and_scripts', 999);
+
 require_once( 'lib/custom-posts.php' );
 
 ?>

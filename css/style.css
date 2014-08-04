@@ -676,10 +676,12 @@ body > header.contain-to-grid {
 #content.front-page article, .front-page#tribe-events-pg-template article {
   padding: 0;
   min-height: 35rem;
-  background-position: 50% 50%;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  border-bottom: 0;
+  margin-bottom: 0;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 #content.front-page article p, .front-page#tribe-events-pg-template article p {
