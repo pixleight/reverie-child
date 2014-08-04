@@ -4,6 +4,26 @@
 	<div class="small-12 columns front-page" id="content" role="main">
 	
 	<?php 
+		/**
+		 * The WordPress Query class.
+		 * @link http://codex.wordpress.org/Function_Reference/WP_Query
+		 *
+		 */
+		$args = array(
+			//Type & Status Parameters
+			'post_type'   => 'front_page',
+			'post_status' => 'publish',
+			
+			//Order & Orderby Parameters
+			'order'               => 'ASC',
+			'orderby'             => 'menu_order',
+			
+			//Pagination Parameters
+			'posts_per_page'         => -1,
+			'nopaging'               => true,
+		);
+	
+	$wp_query = new WP_Query( $args );
 	$menu_query = $wp_query;
 
 	if( $menu_query->have_posts() ) : ?>

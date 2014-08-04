@@ -46,28 +46,14 @@ function add_ie_8_fixes_footer () {
 }
 add_action('wp_footer', 'add_ie_8_fixes_footer');
 
-function katshad_pre_get_posts($qry) {
-	if ( $qry->is_main_query() ) {
-		if ( is_post_type_archive( 'cabin' ) || is_tax( 'cabin_types' ) ) {
-			$qry->set( 'order', 'ASC' );
-			$qry->set( 'orderby', 'title' );
-			$qry->set( 'nopaging', true );
-		} else if ( is_front_page() ) {
-			//Type & Status Parameters
-			$qry->set( 'post_type', 'front_page' );
-			$qry->set( 'post_status', 'publish' );
-			
-			//Order & Orderby Parameters
-			$qry->set( 'order', 'ASC' );
-			$qry->set( 'orderby', 'menu_order' );
-			
-			//Pagination Parameters
-			$qry->set( 'posts_per_page', -1 );
-			$qry->set( 'nopaging', true );
-		}
-	}
+function alter_cabins_query($qry) {
+   if ( $qry->is_main_query() && ( is_post_type_archive( 'cabin' ) || is_tax( 'cabin_types' ) ) ) {
+     $qry->set( 'order', 'ASC' );
+     $qry->set( 'orderby', 'title' );
+     $qry->set( 'nopaging', true );
+   }
 }
-add_action('pre_get_posts','katshad_pre_get_posts');
+add_action('pre_get_posts','alter_cabins_query');
 
 require_once( 'lib/custom-posts.php' );
 
