@@ -19,7 +19,7 @@
 
 <script>
 	(function($) {
-		jQuery(document).foundation();
+		$(document).foundation();
 	})(jQuery);
 </script>
 	
