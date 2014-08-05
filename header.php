@@ -6,6 +6,7 @@
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?> > <!--<![endif]-->
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta charset="<?php bloginfo('charset'); ?>">
 
 	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
